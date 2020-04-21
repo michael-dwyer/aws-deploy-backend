@@ -11,6 +11,13 @@ mongoose.connect(process.env.MONGODB_URI, { useUnifiedTopology: true, useNewUrlP
         .then(() => console.log('MONGODB CONNECTED'))
         .catch(err => console.log(err));
 
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+  console.log('!@-------Mongooose-------@!')
+  console.log('Connected')
+});
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users/users');
 var talkRouter = require('./routes/talk/talk');
