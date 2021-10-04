@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', indexRouter);
 app.use('/api/users', usersRouter); 
 app.use('/api/talk', talkRouter); 
-// app.listen(4000, () => console.log('Backend on port 4000'))
+// app.listen(3001, () => console.log('Backend on port 4000'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
